@@ -1,0 +1,203 @@
+body {
+  padding: 0;
+  text-align: center;
+  background-color: #222;
+}
+
+#game-intro,
+#game-instructions,
+#game-lost,
+#game-won,
+#game-board {
+  width: 550px;
+  height: 550px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+#game-intro {
+  background-color: #222222;
+  z-index: 2;
+}
+
+#game-instructions {
+  background-color: #222222;
+  display: none;
+  z-index: 3;
+}
+
+#game-lost,
+#game-won {
+  display: none;
+  z-index: 1;
+}
+
+#game-intro p,
+#game-instructions p,
+#game-lost p,
+#game-won p {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  padding: 0 15px;
+}
+
+#game-lost {
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+
+#game-lost p {
+  padding: 25px;
+}
+
+.yoda-img {
+  width: 200px;
+  padding: 10px 0;
+}
+
+.lightsaber-img {
+  width: 100%;
+  height: 163px;
+}
+
+.arrows-img {
+  width: 150px;
+}
+
+button {
+  font-size: 25px;
+  background-color: #35d32f;
+  color: #fff;
+  padding: 10px 40px;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -3px #0c5815;
+  box-shadow: inset 0 -3px #0c5815;
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+#instructions-button {
+  font-size: 12px;
+  background-color: #2f37d3;
+  -webkit-box-shadow: inset 0 -3px #1d2284;
+  box-shadow: inset 0 -3px #1d2284;
+}
+
+#restart-button-lost {
+  margin-bottom: 50px;
+}
+
+#start-button:hover,
+#instructions-button:hover,
+#back-button:hover,
+#restart-button-lost:hover,
+#restart-button-won:hover {
+  background-color: #2fb42a;
+}
+
+#instructions-button:hover {
+  background-color: #2930b0;
+}
+
+#start-button:focus,
+#instructions-button:focus,
+#back-button:focus,
+#restart-button-lost:focus,
+#restart-button-won:focus {
+  transform: scale(0.95);
+  transition: all 0.1s ease-in-out;
+}
+
+#starsVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#game-intro:before,
+#game-instructions:before,
+#game-board:before,
+#game-lost:before,
+#game-won:before {
+  content: "hello";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(15px);
+  -webkit-filter: blur(15px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  transition: opactiy 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+#game-intro:after,
+#game-instructions:after,
+#game-board:after,
+#game-lost:after,
+#game-won:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+#game-intro:after {
+  background: #000;
+}
+
+#game-lost:after {
+  background-image: url("/docs/assets/img/bg-lost.png");
+}
+
+/*#game-won:after {
+  background-image: url("/docs/assets/img/baby-yoda.gif");
+}*/
+
+#canvas {
+  border-radius: 10px;
+}
