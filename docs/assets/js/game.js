@@ -164,7 +164,7 @@ class Game {
         return this.yoda.crashWith(obstacle);
       });
 
-    if (this.yoda.x < 0) {
+    if (this.yoda.x < 0 - this.yoda.width / 2) {
       setTimeout(function () {
         document.getElementById("game-lost").style.display = "flex";
         document.getElementById("game-board").style.display = "none";
@@ -231,7 +231,7 @@ class Game {
       this.allies5[i].draw();
     }
 
-    if (this.frames === 1 || this.frames % 180 === 0) {
+    if (this.frames === 1 || this.frames % 90 === 0) {
       this.allies5.push(new AllyFifthRow(this.ctx));
     }
   }
@@ -254,7 +254,7 @@ class Game {
     }
     for (let i = 0; i < this.allies4.length; i++) {
       if (this.yoda.crashHalf(this.allies4[i])) {
-        this.yoda.x -= 4;
+        this.yoda.x -= 2;
       }
     }
     for (let i = 0; i < this.allies5.length; i++) {

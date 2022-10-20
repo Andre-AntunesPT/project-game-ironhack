@@ -195,11 +195,11 @@ class AllyFirstRow extends CollisionObj {
 
 class AllySecondRow extends CollisionObj {
   constructor(ctx) {
-    super(ctx, 650, 140, 164, 35, new Image());
+    super(ctx, 650, 140, 143, 35, new Image());
   }
 
   draw() {
-    this.img.src = "docs/assets/img/rock-ally.png";
+    this.img.src = "docs/assets/img/coal-ally2.png";
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
 }
@@ -217,11 +217,11 @@ class AllyThirdRow extends CollisionObj {
 
 class AllyFourthRow extends CollisionObj {
   constructor(ctx) {
-    super(ctx, 650, 70, 70, 35, new Image());
+    super(ctx, 650, 70, 100, 35, new Image());
   }
 
   draw() {
-    this.img.src = "docs/assets/img/wood-ally2.png";
+    this.img.src = "docs/assets/img/coal-ally.png";
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
 }
