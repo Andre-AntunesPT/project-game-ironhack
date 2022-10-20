@@ -46,7 +46,7 @@ class Game {
     this.frameScore = 0;
     this.yoda = new Player(250, 455, 50, 35, this.ctx);
     this.backgroundLava = new Background(this.ctx);
-    this.BgObstacle = new BgObject(0, 35, 550, 175, this.ctx);
+    this.BgObstacle = new BgObject(0, 0, 550, 210, this.ctx);
     this.winObstacle1 = new WinObject(75, 0, 60, 35, this.ctx);
     this.winObstacle2 = new WinObject(245, 0, 60, 35, this.ctx);
     this.winObstacle3 = new WinObject(415, 0, 60, 35, this.ctx);
@@ -173,7 +173,13 @@ class Game {
       this.stop();
     }
 
-    if (this.yoda.crashWith(this.BgObstacle) && !board) {
+    if (
+      this.yoda.crashWith(this.BgObstacle) &&
+      !board &&
+      !this.yoda.crashHalf(this.winObstacle1) &&
+      !this.yoda.crashHalf(this.winObstacle2) &&
+      !this.yoda.crashHalf(this.winObstacle3)
+    ) {
       setTimeout(function () {
         document.getElementById("game-lost").style.display = "flex";
         document.getElementById("game-board").style.display = "none";
@@ -277,7 +283,7 @@ class Game {
       this.win = true;
       this.stop();
     }
-    this.score = 1000 - Math.floor(this.frameScore / 3);
+    this.score = 1000 - Math.floor(this.frameScore / 10);
     let scoredisplay = document.getElementById("score-display");
     scoredisplay.innerHTML = `Score: ${this.score}`;
   }
