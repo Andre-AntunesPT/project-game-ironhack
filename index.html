@@ -4,30 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="/docs/assets/css/style.css" />
+    <link rel="stylesheet" href="docs/assets/css/style.css" />
     <title>Yoda Jumper</title>
   </head>
   <body>
-    <video autoplay muted loop id="starsVideo">
+    <!--<video autoplay muted loop id="starsVideo">
       <source src="/docs/assets/msc/stars-bg.mp4" type="video/mp4" />
-      Your browser does not support HTML5 video.
-    </video>
-
+    </video>-->
+    <audio src="docs/assets/msc/star-wars-soundtrack.mp3" autoplay>
+      <embed
+        src="docs/assets/msc/star-wars-soundtrack.mp3"
+        loop="true"
+        autostart="true"
+        width="0"
+        height="0"
+        hidden="true"
+      />
+    </audio>
     <div id="game-intro">
       <br />
       <img
-        src="/docs/assets/img/intro_baby-yoda.png"
+        src="docs/assets/img/intro_baby-yoda.png"
         alt="Baby Yoda"
         class="yoda-img"
       />
       <br />
-      <p>May the force be with you!</p>
+      <h1>Baby Yoda Jumper</h1>
       <br />
       <button id="start-button">Start</button>
       <br />
       <button id="instructions-button">Instructions</button>
       <img
-        src="/docs/assets/img/lightsaber.gif"
+        src="docs/assets/img/lightsaber.gif"
         alt="Baby Yoda"
         class="lightsaber-img"
       />
@@ -36,15 +44,15 @@
     <div id="game-instructions">
       <br />
       <img
-        src="/docs/assets/img/intro_baby-yoda.png"
+        src="docs/assets/img/intro_baby-yoda.png"
         alt="Baby Yoda"
         class="yoda-img"
       />
-      <p>Use the arrows to control baby Yoda</p>
-      <img src="/docs/assets/img/intro_arrows.png" alt="" class="arrows-img" />
+      <p>use the arrows to control baby Yoda</p>
+      <img src="docs/assets/img/intro_arrows.png" alt="" class="arrows-img" />
       <br />
-      <p>Arrive at the end before X seconds</p>
-      <p>The fastest you finish, highest the points</p>
+      <p>Catch the frog before the time runs out</p>
+      <p>The fastest you finish, more points you'll get</p>
       <br />
       <button id="back-button">Back</button>
     </div>
@@ -54,25 +62,29 @@
     </div>
 
     <div id="game-lost">
-      <p>You Lost!<br />The force was not with you!</p>
+      <h1>You Lost!</h1>
+      <p>The force was not with you!</p>
+      <br />
+      <br />
       <button id="restart-button-lost">Restart</button>
     </div>
 
     <div id="game-won">
       <img
-        src="/docs/assets/img/intro_baby-yoda.png"
+        src="docs/assets/img/intro_baby-yoda.png"
         alt="Baby Yoda"
         class="yoda-img"
       />
       <br />
-      <button id="restart-button-won">Restart</button>
-      <p>You Won</p>
+      <h1>You Won</h1>
       <p id="score-display"></p>
+      <button id="restart-button-won">Restart</button>
     </div>
 
-    <script type="text/javascript" src="/docs/assets/js/enemy.js"></script>
-    <script type="text/javascript" src="/docs/assets/js/player.js"></script>
-    <script type="text/javascript" src="/docs/assets/js/game.js"></script>
-    <script type="text/javascript" src="/docs/assets/js/index.js"></script>
+    <!--<script type="text/javascript" src="/docs/assets/js/bg.js"></script>-->
+    <script type="text/javascript" src="docs/assets/js/classes.js"></script>
+    <script type="text/javascript" src="docs/assets/js/player.js"></script>
+    <script type="text/javascript" src="docs/assets/js/game.js"></script>
+    <script type="text/javascript" src="docs/assets/js/index.js"></script>
   </body>
 </html>

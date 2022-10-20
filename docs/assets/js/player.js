@@ -6,49 +6,63 @@ class Player {
     this.h = h;
     this.ctx = ctx;
     this.img = new Image();
-    this.img.src = "/docs/assets/img/yoda-1.png";
+    this.img1 = new Image();
+    this.img1.src = "docs/assets/img/yoda-1.png";
+    this.img2 = new Image();
+    this.img2.src = "docs/assets/img/yoda-2.png";
+    this.img.src = this.img1.src;
   }
 
   keyboardEvents() {
     window.addEventListener("keydown", (e) => {
       switch (e.code) {
         case "ArrowLeft":
-          if (this.x > 0) {
+          if (game.frames > 180 && this.x > 0) {
             this.x -= 50;
-            this.img.src = "/docs/assets/img/yoda-1.png";
+            if (this.img.src === this.img1.src) {
+              return (this.img.src = this.img2.src);
+            }
+            if (this.img.src === this.img2.src) {
+              return (this.img.src = this.img1.src);
+            }
           }
           break;
         case "ArrowRight":
-          if (this.x + this.w < 550) {
+          if (game.frames > 180 && this.x + this.w < 550) {
             this.x += 50;
-            this.img.src = "/docs/assets/img/yoda-2.png";
+            if (this.img.src === this.img1.src) {
+              return (this.img.src = this.img2.src);
+            }
+            if (this.img.src === this.img2.src) {
+              return (this.img.src = this.img1.src);
+            }
           }
           break;
         case "ArrowUp":
-          if (this.y > 0) {
+          if (game.frames > 180 && this.y > 0) {
             this.y -= 35;
+            if (this.img.src === this.img1.src) {
+              return (this.img.src = this.img2.src);
+            }
+            if (this.img.src === this.img2.src) {
+              return (this.img.src = this.img1.src);
+            }
           }
           break;
         case "ArrowDown":
-          if (this.y + this.h < 490) {
+          if (game.frames > 180 && this.y + this.h < 490) {
             this.y += 35;
+            if (this.img.src === this.img1.src) {
+              return (this.img.src = this.img2.src);
+            }
+            if (this.img.src === this.img2.src) {
+              return (this.img.src = this.img1.src);
+            }
           }
           break;
       }
     });
   }
-  /*draw() {
-    this.img.src = "/docs/assets/img/yoda-1.png";
-    
-    if (this.img.src === "/docs/assets/img/baby-yoda-1.png") {
-      return (this.img.src = "/docs/assets/img/baby-yoda-2.png");
-    }
-    if (this.img.src === "/docs/assets/img/baby-yoda-2.png") {
-      return (this.img.src = "/docs/assets/img/baby-yoda-1.png");
-    }
-    
-    this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
-  }*/
   draw() {
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
@@ -64,6 +78,12 @@ class Player {
   right() {
     return this.x + this.w;
   }
+  centerX() {
+    return this.x + this.w / 2;
+  }
+  centerY() {
+    return this.y + this.h / 2;
+  }
 
   crashWith(obstacle) {
     return !(
@@ -71,6 +91,15 @@ class Player {
       this.top() >= obstacle.bottom() ||
       this.right() <= obstacle.left() ||
       this.left() >= obstacle.right()
+    );
+  }
+
+  crashHalf(obstacle) {
+    return !(
+      this.centerY() <= obstacle.top() ||
+      this.centerY() >= obstacle.bottom() ||
+      this.centerX() <= obstacle.left() ||
+      this.centerX() >= obstacle.right()
     );
   }
 }

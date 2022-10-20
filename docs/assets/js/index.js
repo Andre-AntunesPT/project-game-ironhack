@@ -22,7 +22,8 @@ window.onload = () => {
   };
 
   function startGame() {
-    let game = new Game();
     game.start();
   }
 };
+
+let game = new Game();
