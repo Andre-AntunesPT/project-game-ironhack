@@ -46,7 +46,7 @@ class Game {
     this.frameScore = 0;
     this.yoda = new Player(250, 455, 50, 35, this.ctx);
     this.backgroundLava = new Background(this.ctx);
-    this.BgObstacle = new BgObject(0, 0, 550, 175, this.ctx);
+    this.BgObstacle = new BgObject(0, 35, 550, 175, this.ctx);
     this.winObstacle1 = new WinObject(75, 0, 60, 35, this.ctx);
     this.winObstacle2 = new WinObject(245, 0, 60, 35, this.ctx);
     this.winObstacle3 = new WinObject(415, 0, 60, 35, this.ctx);
