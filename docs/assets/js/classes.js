@@ -1,6 +1,4 @@
-/////////////////
-// Win BG Lava //
-/////////////////
+// Win BG Lava
 
 class Background {
   constructor(ctx) {
@@ -26,9 +24,7 @@ class Background {
   }
 }
 
-////////////////
-// Win Object //
-////////////////
+// Win Object
 
 class WinObject {
   constructor(x, y, w, h, ctx) {
@@ -41,7 +37,7 @@ class WinObject {
   }
 
   draw() {
-    this.img.src = "docs/assets/img/iron-ally_final.png";
+    this.img.src = "docs/assets/img/rock-ally_final.png";
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
 
@@ -59,9 +55,7 @@ class WinObject {
   }
 }
 
-///////////////
-// BG Object //
-///////////////
+// BG Object
 
 class BgObject {
   constructor(x, y, w, h, ctx) {
@@ -92,9 +86,7 @@ class BgObject {
   }
 }
 
-///////////////////
-// Parent Object //
-///////////////////
+// Parent Object
 
 class CollisionObj {
   constructor(ctx, x, y, w, h, img) {
@@ -119,9 +111,7 @@ class CollisionObj {
   }
 }
 
-//////////////////
-// Enemy Object //
-//////////////////
+// Enemy Object
 
 class EnemyFirstRow extends CollisionObj {
   constructor(ctx) {
@@ -178,9 +168,7 @@ class EnemyFifthRow extends CollisionObj {
   }
 }
 
-/////////////////
-// Ally Object //
-/////////////////
+// Ally Object
 
 class AllyFirstRow extends CollisionObj {
   constructor(ctx) {

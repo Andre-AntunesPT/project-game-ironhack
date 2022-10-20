@@ -47,9 +47,9 @@ class Game {
     this.yoda = new Player(250, 455, 50, 35, this.ctx);
     this.backgroundLava = new Background(this.ctx);
     this.BgObstacle = new BgObject(0, 35, 550, 175, this.ctx);
-    this.winObstacle1 = new WinObject(100, -12, 35, 47, this.ctx);
-    this.winObstacle2 = new WinObject(250, -12, 35, 47, this.ctx);
-    this.winObstacle3 = new WinObject(415, -12, 35, 47, this.ctx);
+    this.winObstacle1 = new WinObject(75, 0, 60, 35, this.ctx);
+    this.winObstacle2 = new WinObject(245, 0, 60, 35, this.ctx);
+    this.winObstacle3 = new WinObject(415, 0, 60, 35, this.ctx);
     this.controls = this.yoda.keyboardEvents();
     this.intervalId = setInterval(this.update, 1000 / 60);
   }
@@ -143,25 +143,26 @@ class Game {
         document.getElementById("game-lost").style.display = "flex";
         document.getElementById("game-board").style.display = "none";
       }, 100);
+      this.yoda.h = 600;
       this.win = false;
       this.stop();
     }
 
     const board =
       this.allies1.some((obstacle) => {
-        return this.yoda.crashWith(obstacle);
+        return this.yoda.crashHalf(obstacle);
       }) ||
       this.allies2.some((obstacle) => {
-        return this.yoda.crashWith(obstacle);
+        return this.yoda.crashHalf(obstacle);
       }) ||
       this.allies3.some((obstacle) => {
-        return this.yoda.crashWith(obstacle);
+        return this.yoda.crashHalf(obstacle);
       }) ||
       this.allies4.some((obstacle) => {
-        return this.yoda.crashWith(obstacle);
+        return this.yoda.crashHalf(obstacle);
       }) ||
       this.allies5.some((obstacle) => {
-        return this.yoda.crashWith(obstacle);
+        return this.yoda.crashHalf(obstacle);
       });
 
     if (this.yoda.x < 0 - this.yoda.width / 2) {
@@ -266,9 +267,9 @@ class Game {
 
   checkWin() {
     if (
-      this.yoda.crashWith(this.winObstacle1) ||
-      this.yoda.crashWith(this.winObstacle2) ||
-      this.yoda.crashWith(this.winObstacle3)
+      this.yoda.crashHalf(this.winObstacle1) ||
+      this.yoda.crashHalf(this.winObstacle2) ||
+      this.yoda.crashHalf(this.winObstacle3)
     ) {
       setTimeout(function () {
         document.getElementById("game-won").style.display = "flex";

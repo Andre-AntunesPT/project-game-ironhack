@@ -16,10 +16,17 @@
     <video autoplay muted loop id="starsVideo">
       <source src="docs/assets/msc/stars-bg.mp4" type="video/mp4" />
     </video>
-    <audio src="docs/assets/msc/star-wars-soundtrack.mp3" autoplay autostart>
+    <audio
+      src="docs/assets/msc/star-wars-soundtrack.mp3"
+      loop
+      autoplay
+      autostart
+      id="soundtrack"
+    >
       <embed
         src="docs/assets/msc/star-wars-soundtrack.mp3"
         loop="true"
+        autoplay="true"
         autostart="true"
         width="0"
         height="0"
@@ -56,7 +63,7 @@
       <p>use the arrows to control baby Yoda</p>
       <img src="docs/assets/img/intro_arrows.png" alt="" class="arrows-img" />
       <br />
-      <p>Catch the frog before the time runs out</p>
+      <p>Reach the end before the time runs out</p>
       <p>The fastest you finish, more points you'll get</p>
       <br />
       <button id="back-button">Back</button>
@@ -67,8 +74,8 @@
     </div>
 
     <div id="game-lost">
-      <h1>You Lost!</h1>
-      <p>The force was not with you!</p>
+      <h1>You Lost</h1>
+      <p>The force is not strong with this one!</p>
       <br />
       <br />
       <button id="restart-button-lost">Restart</button>

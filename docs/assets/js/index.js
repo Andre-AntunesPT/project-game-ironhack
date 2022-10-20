@@ -1,4 +1,6 @@
 window.onload = () => {
+  document.getElementById("soundtrack").play();
+
   document.getElementById("instructions-button").onclick = () => {
     document.getElementById("game-instructions").style.display = "block";
   };
