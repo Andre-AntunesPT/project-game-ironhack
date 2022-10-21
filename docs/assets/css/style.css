@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Star Jedi";
-  src: url("../fonts/Starjedi.ttf") format("ttf");
+  src: url("../../assets/fonts/Starjedi.ttf") format("ttf");
 }
 @font-face {
   font-family: "Star Jedi Outline";
@@ -133,7 +133,7 @@ h2 {
 button {
   font-size: 25px;
   background-color: #35d32f;
-  font-family: cursive;
+  font-family: cursive, Arial, Helvetica, sans-serif;
   color: #fff;
   letter-spacing: 3px;
   padding: 10px 40px;
