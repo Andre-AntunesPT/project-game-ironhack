@@ -308,7 +308,7 @@ class Game {
   }
 
   showScore() {
-    this.ctx.font = "16px cursive";
+    this.ctx.font = "16px Arial, Helvetica, sans-serif";
     this.ctx.fillStyle = "#35d32f";
     this.ctx.fillText(
       `${
@@ -339,7 +339,7 @@ class Game {
       this.ctx.fillStyle = `rgba(0, 0, 0, 0.25)`;
       this.ctx.fillRect(0, 0, this.width, this.height);
       this.ctx.fillStyle = "#35d32f";
-      this.ctx.font = "100px Star Jedi";
+      this.ctx.font = "100px Arial, Helvetica, sans-serif";
       this.ctx.backgroundColor = "#000000";
       this.ctx.fillText(`${timer2}`, 250, 275);
     }
