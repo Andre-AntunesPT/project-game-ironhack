@@ -1,10 +1,10 @@
 @font-face {
   font-family: "Star Jedi";
-  src: url("docs/assets/fonts/Starjedi.ttf") format("ttf");
+  src: url("../fonts/Starjedi.ttf") format("ttf");
 }
 @font-face {
   font-family: "Star Jedi Outline";
-  src: url("docs/assets/fonts/Starjout.ttf") format("ttf");
+  src: url("../fonts/Starjout.ttf") format("ttf");
 }
 
 body {
